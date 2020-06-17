@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="application/javascript">
+        function draw() {
+          var canvas = document.getElementById("canvas");
+          if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
 
+          ctx.fillRect(10, 10, 80, 80) //kvadrat
+  }
+        }
+
+    </script>
+</head>
+
+<body onload="draw();">
+ 
+  <form>  
+    <p><b>Введите фигуру(ы):</b><br>
+    <input type="text" name="figure" id="figure" onchange="drawFunc()">
+    <input type="button" value="Button">
+   </p></form>
+   <p id = "info2" ></p>
+   <script>
+    function drawFunc() {
+      var str = document.getElementById("figure").value;
+      document.getElementById("info2").innerHTML = "Вы набрали следующий текст: " + str;
+      str.split(' ')[0]
+      alert( str.indexOf('square') ); // 0, потому что подстрока 'Widget' найдена в начале
+      
+    }
+    </script>
+
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
